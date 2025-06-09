@@ -1,11 +1,13 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json(['message' => 'TikTok Clone API']);
 });
 
-Route::get('/test', function () {
-    return 'test works';
+Route::get('/api/categories', function () {
+    return response()->json([
+        ['id' => 1, 'name' => 'Semua', 'slug' => 'semua'],
+        ['id' => 2, 'name' => 'Komedi', 'slug' => 'komedi']
+    ]);
 });
